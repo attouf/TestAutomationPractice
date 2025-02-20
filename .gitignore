@@ -1,0 +1,11 @@
+# Dossiers de build Maven
+target/
+!target/.gitkeep
+
+# Fichiers de configuration locaux
+*.log
+*.class
+*.jar
+*.war
+*.ear
+*.iml

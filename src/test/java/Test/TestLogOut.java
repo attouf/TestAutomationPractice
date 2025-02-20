@@ -15,9 +15,6 @@ public class TestLogOut extends BasicTest {
     static Authentification auth;
     static UserAccount userPage;
 
-
-
-
 @Given("la page dacceuil est visible1")
 public void la_page_d_acceuil_est_visible() {
     boolean visible=home.homePageVisible().isDisplayed();
@@ -44,9 +41,6 @@ public void la_page_d_acceuil_est_visible() {
     public void la_page_UserAccount_est_visible() {
         String message = userPage.getSuccessMsg();
         Assert.assertEquals(message,"Welcome to your account. Here you can manage all of your personal information and orders." );
-        
-     
-       
     }
 
     @When("je clique sur le bouton SignOut")
@@ -60,10 +54,6 @@ public void la_page_d_acceuil_est_visible() {
         boolean visibleT = auth.authentificationTitleVisible().isDisplayed();
         Assert.assertTrue(visibleT, "verifier la Authentification Page");
     }
-
-   
-    
-
 
     }
 
