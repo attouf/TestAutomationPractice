@@ -9,7 +9,7 @@ Feature: User SignUp
     And Verifiez que la page Personal information est visible
     And Je remplis le formulaire  "atef" "mohamed" "atef1234"
     And Je clic sur le bouton Register
-    Then Verifiez que le message "Your account has been created." est visible
+    Then Verifier que le message "Your account has been created." est visible
     
   Scenario: SignUp avec un email existant
     Given La page accueil est visible 

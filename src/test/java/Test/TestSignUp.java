@@ -72,7 +72,7 @@ public class TestSignUp extends BasicTest {
         userPage = personalPage.clickRegisterButton();
     }
 
-    @And("Verifiez que le message {string} est visible")
+    @And("Verifier que le message {string} est visible")
     public void Verifiez_que_le_message_est_visible(String s) {
         String msg=userPage.getSuccessMsgCreateAccount();
         Assert.assertEquals(msg, "Your account has been created.");
