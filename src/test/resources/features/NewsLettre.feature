@@ -6,6 +6,7 @@ Feature: S'inscrire aux NewsLettre
         And  le titre NewsLettre doit être visible
         And je tape un email valide "atef"
         And je clique sur le bouton "s'inscrire"
+        
         Then le message "Newsletter : You have successfully subscribed to this newsletter." doit être visible
 
     @NewsLettreError
@@ -18,3 +19,4 @@ Feature: S'inscrire aux NewsLettre
         Then le message "Newsletter : Invalid email address." doit être visible
 
 
+IO8ISkipkkipko
