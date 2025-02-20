@@ -1,17 +1,21 @@
 package Test;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import com.practice.pages.HomePage;
+
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class TestRechercheProd {
-
+    static WebDriver driver;
+    static HomePage homePage = new HomePage(driver);
 
     @Given("la page accueil est visible3")
     public void la_page_accueil_est_visible() {
-        // Write code here that turns the phrase above into concrete actions
-    }
+    homePage.homePageVisible().isDisplayed();    }
 
     @When("je tape le nom de produit &lt;nomProduit&gt; dans la barre de recherche")
     public void je_tape_le_nom_de_produit_lt_nomProduit_gt_dans_la_barre_de_recherche() {

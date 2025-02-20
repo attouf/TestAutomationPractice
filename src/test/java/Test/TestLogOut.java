@@ -14,11 +14,12 @@ public class TestLogOut extends BasicTest {
     static CreateAccount createPage;
     static Authentification auth;
     static UserAccount userPage;
+    TestSignUp testSignUp = new TestSignUp();
+    TestLoginSuccess testLoginSuccess = new TestLoginSuccess();
 
 @Given("la page dacceuil est visible1")
 public void la_page_d_acceuil_est_visible() {
-    boolean visible=home.homePageVisible().isDisplayed();
-    Assert.assertTrue(visible,"Verifier la homePage");
+    testSignUp.La_page_accueil_est_visible();
 
 }
 
@@ -28,8 +29,8 @@ public void la_page_d_acceuil_est_visible() {
 
     @When("je tape un email {string} et un password {string} valides1")
     public void je_tape_un_email_et_un_password_valides(String s, String s2) {
-        auth.setEmail(s);
-        auth.setPassWd(s2);    }
+       testLoginSuccess.je_tape_un_email_et_un_password_valides(s,s2) ;
+    }
 
     @When("je clique sur le bouton SignIn1")
     public void je_clique_sur_le_bouton_SignIn() {
