@@ -24,9 +24,9 @@ public void searchProduct (String product) {
 
 }
 
-public RecherchreProduit clickSearchButton() {
+public ProduitPage clickSearchButton() {
     driver.findElement(searchButton).click();
-    return this;
+    return new ProduitPage(driver);
 }
 
 
