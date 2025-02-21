@@ -13,9 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ProduitPage {
     private WebDriver driver;
     
-    private By searchTitle=By.xpath("//div[@class='breadcrumb clearfix']");
-    private By  productName= By.xpath("//h1//span[@class='lighter']")  ;
-
+    private By searchTitle=By.xpath("//input[@class='search_query form-control ac_input']");
+    private By  productName= By.xpath("//ul[@class='product_list grid row']//a[@class='product-name']");
 
     public ProduitPage (WebDriver driver){
         this.driver = driver;

@@ -6,7 +6,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"Test"},
-        tags = "@NewsLettre",
+        tags = "@Search",
         monochrome = true,
         plugin = {
             "pretty",
