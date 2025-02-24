@@ -28,8 +28,8 @@ public class TestRechercheProd extends BasicTest {
     }
 
     @When("je tape le nom de produit {string} dans la barre de recherche")
-    public void je_tape_le_nom_de_produit_dans_la_barre_de_recherche(String s) {
-        recherheProdPage.searchProduct(s);
+    public void je_tape_le_nom_de_produit_dans_la_barre_de_recherche(String nom_produit) {
+        recherheProdPage.searchProduct(nom_produit);
     }
 
     @When("Je clic sur le bouton de recherche")
@@ -38,12 +38,12 @@ public class TestRechercheProd extends BasicTest {
     }
 
     @Then("Verifier que tous les produits relatifs à la recherche sont visibles {string}")
-    public void Verifiez_que_tous_les_produits_relatifs_la_recherche_sont_visibles(String s) {
+    public void Verifiez_que_tous_les_produits_relatifs_la_recherche_sont_visibles(String nom_produit) {
        
         List<String> produitsAffiches = produitPage.getProductsNames2();
         for (int i = 0; i < produitsAffiches.size(); i++) {
-            Assert.assertTrue(produitsAffiches.get(i).toLowerCase().contains(s.toLowerCase()));
-            System.out.println(i + ". " + produitsAffiches.get(i) + " - contain: " + s);
+            Assert.assertTrue(produitsAffiches.get(i).toLowerCase().contains(nom_produit.toLowerCase()));
+            System.out.println(i + ". " + produitsAffiches.get(i) + " - contain: " + nom_produit);
         }
 
        

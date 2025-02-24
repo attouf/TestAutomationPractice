@@ -1,4 +1,5 @@
- Feature: log in
+
+Feature: log in
 @Login
      Scenario: login success
         Given la page dacceuil est visible

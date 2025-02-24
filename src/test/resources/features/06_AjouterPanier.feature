@@ -1,3 +1,4 @@
+
 Feature: Ajout d'un produit au panier avec changement de couleur
 @Panier
     Scenario Outline: Rechercher un produit a partir de la page d'acceuil et l'ajouter au panier

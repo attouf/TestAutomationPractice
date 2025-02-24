@@ -1,5 +1,5 @@
-Feature: S'inscrire aux NewsLettre
 
+Feature: S'inscrire aux NewsLettre
   @NewsLettre
   Scenario: S'inscrire à la new lettre avec un email valide
     Given la page dacceuil est visible3

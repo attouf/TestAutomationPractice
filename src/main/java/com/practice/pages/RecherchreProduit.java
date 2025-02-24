@@ -19,6 +19,7 @@ public class RecherchreProduit {
     }
 
     public void searchProduct(String product) {
+        driver.findElement(nomProduit).clear();
         driver.findElement(nomProduit).sendKeys(product);
 
     }

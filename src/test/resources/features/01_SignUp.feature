@@ -1,3 +1,4 @@
+
 Feature: User SignUp
 @SignUp
   Scenario: SignUp avec des données valides
