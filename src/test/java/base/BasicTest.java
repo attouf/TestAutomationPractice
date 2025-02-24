@@ -17,7 +17,7 @@ public class BasicTest {
         options.addArguments("--start_maximized");
         options.addArguments("--search-engine_choice=country");
         options.addArguments("--disable-notifications");
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.get("http://www.automationpractice.pl/index.php");
         System.out.println(driver.getTitle());

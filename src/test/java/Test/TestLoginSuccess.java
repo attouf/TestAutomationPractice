@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 
 public class TestLoginSuccess extends BasicTest {
 
-    static Authentification auth ;
+    static Authentification auth = new Authentification(driver) ;
     static HomePage home = new HomePage(driver);
     static UserAccount userPage;
 
