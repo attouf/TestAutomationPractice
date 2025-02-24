@@ -8,20 +8,14 @@
         Then la page UserAccount est visible
 
 
-
+@LogError
  Scenario: login error avec mail invalide
- Given la page dacceuil est visible
-        When je clic sur le bouton signIn
-        When je tape un email invalide "bekri.ateff@gmail.com"
-        When je tape un password "a123"
-        When je clique sur le bouton SignIn
-        Then le message d'erreur "Invalid email address." doit etre visible
+ Given la page dacceuil est visible5
+        When je clic sur le bouton signIn2
+        When je tape un email invalide "sarra.bellila@gmail.com"
+        When je tape un password "mmmmmm"
+        When je clique sur le bouton SignIn3
+        Then le message erreur "Authentication failed." doit etre visible
 
  
- Scenario: login error avec password invalide
- Given la page dacceuil est visible
-        When je clic sur le bouton signIn
-        When je tape un email valide "sarra.bellila@gmail.com"
-         When je tape un password invalide "a123"
-        When je clique sur le bouton SignIn
-        Then le message d'erreur "Authentication failed." doit etre visible
+ 

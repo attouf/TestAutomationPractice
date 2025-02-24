@@ -14,16 +14,17 @@ public class NewsLetterPage {
     private By submitButton = By.xpath("//button[@name='submitNewsletter']");
     private By newsLetterTitle = By.xpath("//h4[contains(text(),'Newsletter')]"); // Vérifie le texte du titre
     private By successMessage = By.xpath("//p[@class='alert alert-success']");
+    private By errorMessage = By.xpath("//p[@class='alert alert-danger']");
 
-    public NewsLetterPage (WebDriver driver){
+    public NewsLetterPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public WebElement newsLetterTitleVisisble (){
+    public WebElement newsLetterTitleVisisble() {
         return driver.findElement(newsLetterTitle);
     }
 
-    public void setEmail (String email){
+    public void setEmail(String email) {
         driver.findElement(mailField).sendKeys(email);
     }
 
@@ -33,10 +34,11 @@ public class NewsLetterPage {
     }
 
     public String getSuccessMsg() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); 
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(successMessage)).getText();
     }
-
-
-
+    public String getErrorMsg() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage)).getText();
+    }
 }

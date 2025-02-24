@@ -13,7 +13,7 @@ public class Authentification {
     private By mailField = By.id("email");
     private By passwordField = By.id("passwd");
     private By submitButton = By.id("SubmitLogin") ;
-    private By authentificationTitle=By.cssSelector("div div h1[class$='page-heading']");
+    private By authentificationTitle=By.cssSelector("h1.page-heading");
 
   
     public Authentification (WebDriver driver){

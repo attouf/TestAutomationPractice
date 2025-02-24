@@ -1,6 +1,7 @@
 # Dossiers de build Maven
 target/
 !target/.gitkeep
+allure/
 
 # Fichiers de configuration locaux
 *.log

@@ -10,7 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class UserAccount {
 
     private WebDriver driver;
-    private By signOut=By.linkText("Sign out");
+    private By signOut = By.linkText("Sign out");
+
     public UserAccount(WebDriver driver) {
         this.driver = driver;
 
@@ -24,6 +25,7 @@ public class UserAccount {
 
         return msg;
     }
+
     public String getSuccessMsgCreateAccount() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5)); // Attendre jusqu'à 10 secondes
         String msg = wait
@@ -32,7 +34,8 @@ public class UserAccount {
 
         return msg;
     }
-    public Authentification clickSignOut(){
+
+    public Authentification clickSignOut() {
         driver.findElement(signOut).click();
         return new Authentification(driver);
     }
