@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class UserAccount {
 
     private WebDriver driver;
-    private By signOut = By.linkText("Sign out");
+    private By signOut = By.xpath("//div[@class='header_user_info']//a[@class='logout']");
 
     public UserAccount(WebDriver driver) {
         this.driver = driver;

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage {
     private WebDriver driver;
-    private By signIn = By.linkText("Sign in");
+    private By signIn = By.xpath("//div[@class='header_user_info']//a");
     private By logo= By.cssSelector("div img.logo.img-responsive");
     
         

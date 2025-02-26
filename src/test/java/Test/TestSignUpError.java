@@ -13,6 +13,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utile.JsonReader;
 
 
 public class TestSignUpError extends BasicTest{
@@ -43,10 +44,10 @@ public class TestSignUpError extends BasicTest{
         Assert.assertTrue(visibleT, "verifier la Authentification Page");
     }
 
-    @When("Taper une adresse email existante {string}")
-    public void Taper_une_adresse_email_valide(String s) {
+    @When("Taper une adresse email existante")
+    public void Taper_une_adresse_email_valide() throws Exception {
 
-        createPage.setEmail(s);
+        createPage.setEmail(JsonReader.userSignInData("email"));
     }
 
     @And("Je clic sur le bouton Create Account1")

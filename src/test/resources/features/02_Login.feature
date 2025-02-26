@@ -4,7 +4,7 @@ Feature: log in
      Scenario: login success
         Given la page dacceuil est visible
         When je clic sur le bouton signIn
-        When je tape un email "sarra.bellila@gmail.com" et un password "omar1234" valides
+        When je tape un email et un password valides
         When je clique sur le bouton SignIn
         Then la page UserAccount est visible
 

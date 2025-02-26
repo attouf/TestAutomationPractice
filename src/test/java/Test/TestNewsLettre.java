@@ -8,6 +8,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utile.DateGenerator;
+import utile.JasonReader;
+import utile.JsonReader;
 
 public class TestNewsLettre extends BasicTest {
     TestSignUp testSignUp = new TestSignUp();
@@ -28,9 +30,9 @@ public class TestNewsLettre extends BasicTest {
         Assert.assertTrue(visible, "verifier la home Page");
     }
 
-    @When("je tape un email valide {string}")
-    public void je_tape_un_email_valide(String s) {
-        newMail = s + DateGenerator.generateDateHeure() + "@gmail.com";
+    @When("je tape un email valide")
+    public void je_tape_un_email_valide() throws Exception {
+        newMail = JsonReader.userSignUpData("mail") + DateGenerator.generateDateHeure() + "@gmail.com";
         newsLetterPage.setEmail(newMail);
     }
 

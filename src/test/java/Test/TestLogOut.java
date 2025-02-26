@@ -1,5 +1,7 @@
 package Test;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import com.practice.pages.Authentification;
 import com.practice.pages.CreateAccount;
@@ -28,9 +30,9 @@ public class TestLogOut extends BasicTest {
         testLoginSuccess.testAuthentificationVisibility();
     }
 
-    @When("je tape un email {string} et un password {string} valides1")
-    public void je_tape_un_email_et_un_password_valides(String s, String s2) {
-        testLoginSuccess.je_tape_un_email_et_un_password_valides(s, s2);
+    @When("je tape un email et un password valides1")
+    public void je_tape_un_email_et_un_password_valides()throws IOException, org.json.simple.parser.ParseException {
+        testLoginSuccess.je_tape_un_email_et_un_password_valides();
     }
 
     @When("je clique sur le bouton SignIn1")

@@ -4,7 +4,7 @@ Feature: historique
   Scenario: historiqueCommande
     Given la page dacceuil est visible6
     When je clique sur le bouton SignIn6
-    And je tape un email "sarra.bellila@gmail.com" et un password "omar1234" valides6
+    And je tape un email et un password valides6
     And je clique sur le bouton submit6
     And la page UserAccount est visible6
     And je clique sur le bouton historique de historiqueCommande

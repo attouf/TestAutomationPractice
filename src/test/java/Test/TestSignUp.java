@@ -1,5 +1,7 @@
 package Test;
 
+import java.io.IOException;
+
 import org.slf4j.helpers.Util;
 import org.testng.Assert;
 import com.practice.pages.Authentification;
@@ -12,6 +14,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import utile.DateGenerator;
+
+import utile.JsonReader;
 
 public class TestSignUp extends BasicTest {
     HomePage home = new HomePage(driver);
@@ -40,9 +44,9 @@ public class TestSignUp extends BasicTest {
         Assert.assertTrue(visibleT, "verifier la Authentification Page");
     }
 
-    @When("Taper une adresse email valide {string}")
-    public void Taper_une_adresse_email_valide(String s) {
-        newMail = s + DateGenerator.generateDateHeure() + "@gmail.com";
+    @When("Taper une adresse email valide")
+    public void Taper_une_adresse_email_valide() throws IOException, org.json.simple.parser.ParseException {
+        newMail = JsonReader.userSignUpData("mail") + DateGenerator.generateDateHeure() + "@gmail.com";
         createPage.setEmail(newMail);
     }
 
@@ -58,12 +62,12 @@ public class TestSignUp extends BasicTest {
         Assert.assertTrue(visibleTi, "verifier la Page Personal");
     }
 
-    @When("Je remplis le formulaire  {string} {string} {string}")
-    public void Je_remplis_le_formulaire(String s, String s2, String s4) {
-        personalPage.setFirstName(s);
-        personalPage.setLastName(s2);
+    @When("Je remplis le formulaire")
+    public void Je_remplis_le_formulaire()throws IOException, org.json.simple.parser.ParseException {
+        personalPage.setFirstName(JsonReader.userSignUpData("prenom"));
+        personalPage.setLastName(JsonReader.userSignUpData("nom"));
         personalPage.setEmail(newMail);
-        personalPage.setPassword(s4);
+        personalPage.setPassword(JsonReader.userSignUpData("password"));
 
     }
 

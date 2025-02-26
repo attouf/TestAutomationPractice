@@ -1,10 +1,11 @@
 package Test;
 
-import org.checkerframework.checker.units.qual.t;
+import java.io.IOException;
+
 import org.testng.Assert;
 
 import com.practice.pages.HistoriquePage;
-import com.practice.pages.HomePage;
+
 
 import base.BasicTest;
 import io.cucumber.java.en.Given;
@@ -25,9 +26,9 @@ public class TestHistoriqueCommande extends BasicTest{
         testLoginSuccess.testAuthentificationVisibility();
     }
 
-    @When("je tape un email {string} et un password {string} valides6")
-    public void je_tape_un_email_et_un_password_valides(String s, String s2) {
-        testLoginSuccess.je_tape_un_email_et_un_password_valides(s, s2); 
+    @When("je tape un email et un password valides6")
+    public void je_tape_un_email_et_un_password_valides ()throws IOException, org.json.simple.parser.ParseException {
+        testLoginSuccess.je_tape_un_email_et_un_password_valides(); 
          
       }
 

@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import utile.DateGenerator;
+import utile.JsonReader;
 
 public class TestNewsLettreError extends BasicTest {
     TestSignUp testSignUp = new TestSignUp();
@@ -26,9 +27,9 @@ public class TestNewsLettreError extends BasicTest {
         Assert.assertTrue(visible, "verifier la home Page");
     }
 
-    @When("je tape un email valide2 {string}")
-    public void je_tape_un_email_valide(String s) {
-        newMail = s + DateGenerator.generateDateHeure() + "com";
+    @When("je tape un email valide deja inscrit")
+    public void je_tape_un_email_valid() throws Exception  {
+        newMail = JsonReader.userSignInData("email") + DateGenerator.generateDateHeure() + "com";
         newsLetterPage.setEmail(newMail);
     }
 

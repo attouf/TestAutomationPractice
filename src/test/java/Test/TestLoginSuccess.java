@@ -1,20 +1,24 @@
 package Test;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import com.practice.pages.Authentification;
 import com.practice.pages.HomePage;
 import com.practice.pages.UserAccount;
 import base.BasicTest;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utile.JsonReader;
 
 public class TestLoginSuccess extends BasicTest {
 
     static Authentification auth = new Authentification(driver) ;
     static HomePage home = new HomePage(driver);
     static UserAccount userPage;
-
+    
     TestSignUp testSignUp = new TestSignUp();
 
     @Given("la page dacceuil est visible")
@@ -31,10 +35,11 @@ public class TestLoginSuccess extends BasicTest {
         Assert.assertTrue(visibleT, "verifier la Authentification Page");
     }
 
-    @When("je tape un email {string} et un password {string} valides")
-    public void je_tape_un_email_et_un_password_valides(String s, String s2) {
-        auth.setEmail(s);
-        auth.setPassWd(s2);
+    @When("je tape un email et un password valides")
+    public void je_tape_un_email_et_un_password_valides() throws IOException, org.json.simple.parser.ParseException {
+
+        auth.setEmail(JsonReader.userSignInData("email"));
+        auth.setPassWd(JsonReader.userSignInData("password"));
     }
 
     @When("je clique sur le bouton SignIn")
